@@ -8,7 +8,7 @@ Release: 2
 License: Public Domain
 Group: Development/Tools
 URL: http://invisible-island.net/byacc/byacc.html
-Source: ftp://invisible-island.net/byacc/byacc-%{byaccdate}.tgz
+Source: %{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 %description
@@ -19,7 +19,7 @@ If you are going to do development on your system, you will want to install
 this package.
 
 %prep
-%setup -q -n byacc-%{byaccdate}
+%setup -q -n %{name}-%{version}
 
 %build
 %configure --disable-dependency-tracking
