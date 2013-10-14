@@ -26,6 +26,8 @@ cp %{SOURCE1001} .
 make %{?jobs:-j%jobs}
 
 %install
+mkdir -p %{buildroot}/usr/share/license
+cp README %{buildroot}/usr/share/license/%{name}
 %make_install
 ln -s yacc %{buildroot}/%{_bindir}/byacc
 ln -s yacc.1 %{buildroot}/%{_mandir}/man1/byacc.1
@@ -45,4 +47,4 @@ rm -rf %{buildroot}
 %{_bindir}/byacc
 %{_mandir}/man1/yacc.1*
 %{_mandir}/man1/byacc.1*
-
+/usr/share/license/%{name}
