@@ -46,3 +46,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/byacc
 %{_mandir}/man1/yacc.1*
 %{_mandir}/man1/byacc.1*
+
