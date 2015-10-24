@@ -25,16 +25,16 @@ this package.
 %configure --disable-dependency-tracking
 make %{?_smp_mflags}
 
+%check
+echo ====================TESTING=========================
+make check
+echo ====================TESTING END=====================
+
 %install
 rm -rf $RPM_BUILD_ROOT
 make DESTDIR=$RPM_BUILD_ROOT install
 ln -s yacc $RPM_BUILD_ROOT/%{_bindir}/byacc
 ln -s yacc.1 $RPM_BUILD_ROOT/%{_mandir}/man1/byacc.1
-
-%check
-echo ====================TESTING=========================
-make check
-echo ====================TESTING END=====================
 
 %clean
 rm -rf $RPM_BUILD_ROOT
